@@ -14,7 +14,7 @@ public class alumnos extends usuario {
 
     private String carrera;
     private int cuenta;
-    private ArrayList<clases> lista_clases = new ArrayList<>();
+    private ArrayList<Clase> lista_clases = new ArrayList<>();
 
     public enum facultad {
         Ingenieria("ingenieria"),

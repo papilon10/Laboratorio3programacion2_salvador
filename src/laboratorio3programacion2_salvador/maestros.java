@@ -13,24 +13,14 @@ import java.util.ArrayList;
 public class maestros extends usuario {
 
     private String profesion;
-    private ArrayList<clases> lista_impartidas = new ArrayList<>();
+    private ArrayList<Clase> lista_impartidas = new ArrayList<>();
+    private Clase.Facultad facultad;
 
-    public enum facultad {
-        Ingenieria("ingenieria"),
-        Ciencias_economicas("ciencias economicas"),
-        Arte("arte"),
-        Ciencias_salud("salud");
-
-        private String nombre_facu;
-
-        private facultad(String nombre_facu) {
-            this.nombre_facu = nombre_facu;
-        }
-
-        public String nombre_facu() {
-            return nombre_facu;
-        }
-
+    public enum Facultad {
+        INGENIERIA,
+        CIENCIAS_ECONOMICAS,
+        ARTE,
+        CIENCIAS_SALUD
     }
 
     public maestros(String nombre, String usuario, String contrasena) {

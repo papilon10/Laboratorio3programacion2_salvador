@@ -69,7 +69,7 @@ public class resena {
 
     @Override
     public String toString() {
-        return "resena{" + "alumno=" + alumno + ", maestro=" + maestro + ", clase_asistida=" + clase_asistida + ", puntuacion=" + puntuacion + ", comentario=" + comentario + '}';
+        return "resena{" + "escrita por el alumno" + alumno + ",cuyo maestro es" + maestro + ",que imparte la clase de" + clase_asistida + ", ha dejado este comentario: " + comentario + '}';
     }
 
 }

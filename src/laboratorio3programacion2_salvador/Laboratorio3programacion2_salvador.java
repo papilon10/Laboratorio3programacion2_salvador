@@ -20,7 +20,6 @@ public class Laboratorio3programacion2_salvador {
     public static Scanner lea = new Scanner(System.in);
     public static ArrayList<resena> lista_resena = new ArrayList<>();
     public static ArrayList lista = new ArrayList();
-    public ArrayList<clases> clases = new ArrayList();
 
     alumnos a = new alumnos("civil", 12212233, "darwin", "darwizzy11", "123456");
     alumnos b = new alumnos("marketing", 12212244, "daniela", "danig_az", "hola09");
@@ -34,17 +33,91 @@ public class Laboratorio3programacion2_salvador {
         System.out.println("\n\nIngrese opcion:");
         int opc_login = lea.nextInt();
         boolean salida = false;
-        if (opc_login == 1) {
-            do {
+        do {
+            switch (opc_login) {
+                case 1: {
+                    System.out.println("Ingrese el nombre de usuario: ");
+                    String usuario = str.nextLine();
+                    System.out.println("Ingrese la contrasena: ");
+                    String contrasena = str.nextLine();
+                    if (usuario.equals("darwizzy11") && (contrasena.equals("123456"))
+                            || (usuario.equals("danig_az") && (contrasena.equals("hola123")))) {
+                        menu_alumnos();
 
-            } while (salida != true);
+                    } else {
+                        menu_maestros();
+                    }
 
-        } else if (opc_login == 2) {
-            salida = true;
-            System.out.println("se abandonara el menu...");
-        } else {
-            System.out.println("opcion ingresada es invalida...");
-        }
+                }
+                break;
+                case 2: {
+                    salida = true;
+                    System.out.println("se abandonara el programa...");
+
+                }
+                break;
+                default:
+                    System.out.println("opcion ingresada no es valida");
+            }
+
+        } while (salida != true);
+
+        ArrayList<Clase> clases = new ArrayList();
+// Ingenierías 
+        clases.add(new Clase("Álgebra", "FI1234", Clase.Facultad.INGENIERIA));
+        clases.add(new Clase("Cálculo", "FI1235", Clase.Facultad.INGENIERIA));
+        clases.add(new Clase("Programación",
+                "FI1236", Clase.Facultad.INGENIERIA));
+
+        clases.add(new Clase("Física", "FI1237", Clase.Facultad.INGENIERIA));
+        clases.add(new Clase("Química", "FI1238", Clase.Facultad.INGENIERIA));
+        clases.add(new Clase("Electrónica",
+                "FI1239", Clase.Facultad.INGENIERIA));
+        clases.add(new Clase("Termodinámica",
+                "FI1240", Clase.Facultad.INGENIERIA));
+// Ciencias Económicas 
+        clases.add(new Clase("Microeconomía",
+                "CE1234", Clase.Facultad.CIENCIAS_ECONOMICAS));
+        clases.add(new Clase("Macroeconomía",
+                "CE1235", Clase.Facultad.CIENCIAS_ECONOMICAS));
+        clases.add(new Clase("Contabilidad",
+                "CE1236", Clase.Facultad.CIENCIAS_ECONOMICAS));
+        clases.add(new Clase("Finanzas",
+                "CE1237", Clase.Facultad.CIENCIAS_ECONOMICAS));
+        clases.add(new Clase("Marketing",
+                "CE1238", Clase.Facultad.CIENCIAS_ECONOMICAS));
+        clases.add(new Clase("Gestión Empresarial",
+                "CE1239", Clase.Facultad.CIENCIAS_ECONOMICAS));
+        clases.add(new Clase("Economía Internacional",
+                "CE1240", Clase.Facultad.CIENCIAS_ECONOMICAS));
+// Arte y Diseño 
+        clases.add(new Clase("Dibujo", "AD1234", Clase.Facultad.ARTE));
+        clases.add(new Clase("Pintura", "AD1235", Clase.Facultad.ARTE));
+        clases.add(new Clase("Escultura",
+                "AD1236", Clase.Facultad.ARTE));
+        clases.add(new Clase("Fotografía",
+                "AD1237", Clase.Facultad.ARTE));
+        clases.add(new Clase("Diseño Gráfico",
+                "AD1238", Clase.Facultad.ARTE));
+        clases.add(new Clase("Historia del Arte",
+                "AD1239", Clase.Facultad.ARTE));
+        clases.add(new Clase("Diseño de Interiores",
+                "AD1240", Clase.Facultad.ARTE));
+// Ciencias de la Salud 
+        clases.add(new Clase("Anatomía",
+                "CS1234", Clase.Facultad.CIENCIAS_SALUD));
+        clases.add(new Clase("Fisiología",
+                "CS1235", Clase.Facultad.CIENCIAS_SALUD));
+        clases.add(new Clase("Bioquímica",
+                "CS1236", Clase.Facultad.CIENCIAS_SALUD));
+        clases.add(new Clase("Farmacología",
+                "CS1237", Clase.Facultad.CIENCIAS_SALUD));
+        clases.add(new Clase("Microbiología",
+                "CS1238", Clase.Facultad.CIENCIAS_SALUD));
+        clases.add(new Clase("Nutrición",
+                "CS1239", Clase.Facultad.CIENCIAS_SALUD));
+        clases.add(new Clase("Salud Pública",
+                "CS1240", Clase.Facultad.CIENCIAS_SALUD));
 
     }//fin main
 
@@ -65,7 +138,9 @@ public class Laboratorio3programacion2_salvador {
                     String clase = str.nextLine();
                     System.out.println("ingrese la seccion de la clase: ");
                     int seccion = lea.nextInt();
-                    lista.add(new clases(clase, seccion));
+                    System.out.println("Ingrese la facultad de la clase: ");
+                    String facultad = str.nextLine();
+                    lista.add(new Clase(clase, clase, Clase.Facultad.ARTE));
                     System.out.println("clase agregada exitosamente...");
 
                 }
@@ -151,7 +226,7 @@ public class Laboratorio3programacion2_salvador {
                     String clase = str.nextLine();
                     System.out.println("ingrese la seccion de la clase: ");
                     int seccion = lea.nextInt();
-                    lista.add(new clases(clase, seccion));
+                    lista.add(new Clase(clase, clase, Clase.Facultad.CIENCIAS_SALUD));
                     System.out.println("clase agregada exitosamente...");
 
                 }
