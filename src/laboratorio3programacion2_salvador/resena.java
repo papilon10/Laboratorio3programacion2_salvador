@@ -9,5 +9,67 @@ package laboratorio3programacion2_salvador;
  * @author Apple
  */
 public class resena {
-    
+
+    private String alumno;
+    private String maestro;
+    private String clase_asistida;
+    private int puntuacion;
+    private String comentario;
+
+    public resena() {
+    }
+
+    public resena(String alumno, String maestro, String clase_asistida, int puntuacion, String comentario) {
+        this.alumno = alumno;
+        this.maestro = maestro;
+        this.clase_asistida = clase_asistida;
+        this.puntuacion = puntuacion;
+        this.comentario = comentario;
+    }
+
+    public String getAlumno() {
+        return alumno;
+    }
+
+    public void setAlumno(String alumno) {
+        this.alumno = alumno;
+    }
+
+    public String getMaestro() {
+        return maestro;
+    }
+
+    public void setMaestro(String maestro) {
+        this.maestro = maestro;
+    }
+
+    public String getClase_asistida() {
+        return clase_asistida;
+    }
+
+    public void setClase_asistida(String clase_asistida) {
+        this.clase_asistida = clase_asistida;
+    }
+
+    public int getPuntuacion() {
+        return puntuacion;
+    }
+
+    public void setPuntuacion(int puntuacion) {
+        this.puntuacion = puntuacion;
+    }
+
+    public String getComentario() {
+        return comentario;
+    }
+
+    public void setComentario(String comentario) {
+        this.comentario = comentario;
+    }
+
+    @Override
+    public String toString() {
+        return "resena{" + "alumno=" + alumno + ", maestro=" + maestro + ", clase_asistida=" + clase_asistida + ", puntuacion=" + puntuacion + ", comentario=" + comentario + '}';
+    }
+
 }
