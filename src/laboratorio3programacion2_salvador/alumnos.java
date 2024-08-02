@@ -4,10 +4,18 @@
  */
 package laboratorio3programacion2_salvador;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author Apple
  */
-public class alumnos {
+public class alumnos extends usuario{
+    private String carrera;
+    private int cuenta;
+    private  ArrayList<clases> lista_clases = new ArrayList<>();
+
+    
+    
     
 }
