@@ -134,13 +134,70 @@ public class Laboratorio3programacion2_salvador {
                 != true);
 
     }//fin menu alumnos
-    
-    
-    public static void menu_maestros(){
-    
-    
-    
-    
-    }
+
+    public static void menu_maestros() {
+        System.out.println("---menu de meastros---");
+        System.out.println("1.agregar clases");
+        System.out.println("2.listar clases");
+        System.out.println("3.leer una resena ");
+        System.out.println("4.salir");
+        int opc_maestros = lea.nextInt();
+        boolean salida_maestros = false;
+        do {
+            switch (opc_maestros) {
+                case 1: {
+                    System.out.println("---agregar una clase---");
+                    System.out.println("ingrese el nombre de la clase: ");
+                    String clase = str.nextLine();
+                    System.out.println("ingrese la seccion de la clase: ");
+                    int seccion = lea.nextInt();
+                    lista.add(new clases(clase, seccion));
+                    System.out.println("clase agregada exitosamente...");
+
+                }
+
+                break;
+                case 2: {
+                    System.out.println("---lista de clases---");
+                    for (int i = 0; i < lista.size(); i++) {
+                        System.out.println(
+                                lista.indexOf(lista.get(i)) + "-"
+                                + lista.get(i)
+                        );
+
+                    }
+
+                }
+
+                break;
+                case 3: {
+                    System.out.println("---lista de resenas---");
+                    for (int i = 0; i < lista_resena.size(); i++) {
+                        System.out.println(
+                                lista_resena.indexOf(lista_resena.get(i)) + "-"
+                                + lista_resena.get(i)
+                        );
+
+                    }
+
+                }
+
+                break;
+                case 4: {
+                    salida_maestros = true;
+                    System.out.println("se saldra del menu de maestros...");
+                }
+
+                break;
+
+                default: {
+                    System.out.println("la opcion ingresada es invalida...");
+                }
+
+            }
+
+        } while (salida_maestros != true);
+
+    }//fin menu maestros
 
 }//fin clase
