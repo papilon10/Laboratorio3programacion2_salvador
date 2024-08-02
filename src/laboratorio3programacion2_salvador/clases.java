@@ -13,24 +13,6 @@ public class clases {
     private String nombre;
     private int seccion;
 
-    private enum facultad {
-        Ingenieria("ingenieria"),
-        Ciencias_economicas("ciencias economicas"),
-        Arte("arte"),
-        Ciencias_salud("salud");
-
-        private String nombre_facu;
-
-        private facultad(String nombre_facu) {
-            this.nombre_facu = nombre_facu;
-        }
-
-        public String nombre_facu() {
-            return nombre_facu;
-        }
-
-    }
-
     public clases() {
     }
 
