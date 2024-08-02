@@ -26,9 +26,6 @@ public class Laboratorio3programacion2_salvador {
     alumnos b = new alumnos("marketing", 12212244, "daniela", "danig_az", "hola09");
     maestros x = new maestros("licenciado historia", "alfredo", "juan1978", "sabiduria");
     maestros y = new maestros("doctor quimico", "ana", "doc_anita", "medicina2000");
-    
-    
-    
 
     public static void main(String[] args) {
         System.out.println("--bienvenido al menu--");
@@ -48,67 +45,102 @@ public class Laboratorio3programacion2_salvador {
         } else {
             System.out.println("opcion ingresada es invalida...");
         }
-        
-        
-        clases.add(new Clase("Álgebra", facultad. "FI1234"));
- clases.add(new Clase("Cálculo", Facultad.INGENIERIAS, "FI1235"));
- clases.add(new Clase("Programación", Facultad.INGENIERIAS,
-"FI1236"));
- clases.add(new Clase("Física", Facultad.INGENIERIAS, "FI1237"));
- clases.add(new Clase("Química", Facultad.INGENIERIAS, "FI1238"));
- clases.add(new Clase("Electrónica", Facultad.INGENIERIAS,
-"FI1239"));
- clases.add(new Clase("Termodinámica", Facultad.INGENIERIAS,
-"FI1240"));
- // Ciencias Económicas
- clases.add(new Clase("Microeconomía", Facultad.CIENCIAS_ECONOMICAS,
-"CE1234"));
- clases.add(new Clase("Macroeconomía", Facultad.CIENCIAS_ECONOMICAS,
-"CE1235"));
- clases.add(new Clase("Contabilidad", Facultad.CIENCIAS_ECONOMICAS,
-"CE1236"));
- clases.add(new Clase("Finanzas", Facultad.CIENCIAS_ECONOMICAS,
-"CE1237"));
- clases.add(new Clase("Marketing", Facultad.CIENCIAS_ECONOMICAS,
-"CE1238"));
- clases.add(new Clase("Gestión Empresarial",
-Facultad.CIENCIAS_ECONOMICAS, "CE1239"));
- clases.add(new Clase("Economía Internacional",
-Facultad.CIENCIAS_ECONOMICAS, "CE1240"));
- // Arte y Diseño
- clases.add(new Clase("Dibujo", Facultad.ARTE_Y_DISENO, "AD1234"));
- clases.add(new Clase("Pintura", Facultad.ARTE_Y_DISENO, "AD1235"));
- clases.add(new Clase("Escultura", Facultad.ARTE_Y_DISENO,
-"AD1236"));
- clases.add(new Clase("Fotografía", Facultad.ARTE_Y_DISENO,
-"AD1237"));
- clases.add(new Clase("Diseño Gráfico", Facultad.ARTE_Y_DISENO,
-"AD1238"));
- clases.add(new Clase("Historia del Arte", Facultad.ARTE_Y_DISENO,
-"AD1239"));
- clases.add(new Clase("Diseño de Interiores",
-Facultad.ARTE_Y_DISENO, "AD1240"));
- // Ciencias de la Salud
- clases.add(new Clase("Anatomía", Facultad.CIENCIAS_DE_LA_SALUD,
-"CS1234"));
- clases.add(new Clase("Fisiología", Facultad.CIENCIAS_DE_LA_SALUD,
-"CS1235"));
- clases.add(new Clase("Bioquímica", Facultad.CIENCIAS_DE_LA_SALUD,
-"CS1236"));
- clases.add(new Clase("Farmacología", Facultad.CIENCIAS_DE_LA_SALUD,
-"CS1237"));
- clases.add(new Clase("Microbiología",
-Facultad.CIENCIAS_DE_LA_SALUD, "CS1238"));
- clases.add(new Clase("Nutrición", Facultad.CIENCIAS_DE_LA_SALUD,
-"CS1239"));
- clases.add(new Clase("Salud Pública",
-Facultad.CIENCIAS_DE_LA_SALUD, "CS1240"));
-        
 
     }//fin main
 
     public static void menu_alumnos() {
+        System.out.println("---menu de alumnos---");
+        System.out.println("1.agregar clases");
+        System.out.println("2.listar clases");
+        System.out.println("3.dejar una resena ");
+        System.out.println("4.eliminar resena");
+        System.out.println("5.salir");
+        int opc_alumnos = lea.nextInt();
+        boolean salida_alumnos = false;
+        do {
+            switch (opc_alumnos) {
+                case 1: {
+                    System.out.println("---agregar una clase---");
+                    System.out.println("ingrese el nombre de la clase: ");
+                    String clase = str.nextLine();
+                    System.out.println("ingrese la seccion de la clase: ");
+                    int seccion = lea.nextInt();
+                    lista.add(new clases(clase, seccion));
+                    System.out.println("clase agregada exitosamente...");
 
+                }
+
+                break;
+                case 2: {
+                    System.out.println("---lista de clases---");
+                    for (int i = 0; i < lista.size(); i++) {
+                        System.out.println(
+                                lista.indexOf(lista.get(i)) + "-"
+                                + lista.get(i)
+                        );
+
+                    }
+
+                }
+
+                break;
+                case 3: {
+                    System.out.println("---dejar una resena---");
+                    System.out.println("Ingrese el nombre del alumno: ");
+                    String alumno = str.nextLine();
+                    System.out.println("Ingrese el nombre del maestro a que dejara la resena: ");
+                    String maestro = str.nextLine();
+                    System.out.println("Ingrese el nombre de la clase: ");
+                    String clase_asistida = str.nextLine();
+                    System.out.println("Ingrese la puntuacion: ");
+                    int puntuacion = lea.nextInt();
+                    System.out.println("Ingrese el comentario de la resena: ");
+                    String comentario = str.nextLine();
+                    lista_resena.add(new resena(alumno, maestro, clase_asistida, puntuacion, comentario));
+                    System.out.println("resena creada exitosamente...");
+
+                }
+
+                break;
+                case 4: {
+                    System.out.println("---eliminar resena---");
+                    for (int i = 0; i < lista_resena.size(); i++) {
+                        System.out.println(
+                                lista_resena.indexOf(lista_resena.get(i)) + "-"
+                                + lista_resena.get(i)
+                        );
+
+                    }
+                    System.out.println("Ingrese el indice de la resena a eliminar: ");
+                    int indice = lea.nextInt();
+                    lista_resena.remove(indice);
+                    System.out.println("la resena se elimino exitosamente...");
+
+                }
+
+                break;
+                case 5: {
+                    salida_alumnos = true;
+                    System.out.println("se saldra del menu de alumnos...");
+                }
+                break;
+                default: {
+                    System.out.println("la opcion ingresada es invalida...");
+                }
+
+            }
+
+        } while (salida_alumnos
+                != true);
+
+    }//fin menu alumnos
+    
+    
+    public static void menu_maestros(){
+    
+    
+    
+    
     }
 
 }//fin clase
